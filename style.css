@@ -1,0 +1,499 @@
+:root {
+    --dark-blue: #27374D;
+    --light-blue-main: #4A90E2;
+    --light-blue-nav: #ADD8E6;
+    --light-gray-bg: #F2F2F2;
+    --white-text: #FFFFFF;
+    --text-color: #333333;
+    --card-info-bg: rgba(0, 0, 0, 0.6);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--light-gray-bg);
+    color: var(--text-color);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.header {
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.header__logo {
+    display: flex;
+    align-items: center;
+}
+
+.header__logo-icon {
+    background-color: var(--light-blue-main);
+    border-radius: 10px;
+    padding: 10px;
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header__logo-icon .fas {
+    color: var(--white-text);
+    font-size: 24px;
+}
+
+.header__logo-text {
+    color: var(--white-text);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header__nav {
+    display: flex;
+    gap: 15px;
+}
+
+.header__nav-item {
+    background-color: var(--light-blue-nav);
+    color: var(--white-text);
+    padding: 8px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.header__nav-item:hover,
+.header__nav-item.active {
+    background-color: var(--light-blue-main);
+}
+
+.main-content {
+    padding: 20px 40px;
+}
+
+.filters-bar {
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 25px;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.filter-item {
+    color: var(--white-text);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 5px 10px;
+    transition: color 0.3s ease;
+}
+
+.filter-item:hover {
+    color: var(--light-blue-nav);
+}
+
+.filter-item--dropdown .fas {
+    font-size: 12px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    justify-content: center;
+}
+@media (max-width: 1200px) {
+    .game-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .game-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 480px) {
+    .game-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.game-card {
+    background-color: var(--white-text);
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+}
+
+.game-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.game-card__info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--card-info-bg);
+    color: var(--white-text);
+    padding: 8px 10px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.game-card__price {
+    font-weight: 700;
+}
+
+.game-card__platform {
+    font-size: 12px;
+    opacity: 0.8;
+}
+
+.footer {
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    margin-top: 40px;
+    color: var(--white-text);
+    font-size: 16px;
+}
+
+.footer__contact {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer__contact-icon-wrapper {
+    background-color: var(--light-blue-main);
+    border-radius: 50%;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__contact-icon-wrapper .fas {
+    font-size: 18px;
+    color: var(--white-text);
+}
+
+.footer__publisher-info span {
+    white-space: nowrap;
+}
+
+
+/* Стилі для сторінки купівлі гри */
+.purchase-page-content {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: var(--white-text);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.breadcrumbs {
+    padding: 10px 0;
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.breadcrumb-item {
+    color: var(--light-blue-main);
+    transition: color 0.2s ease;
+}
+
+.breadcrumb-item:hover {
+    color: var(--dark-blue);
+}
+
+.breadcrumb-separator {
+    margin: 0 8px;
+}
+
+.breadcrumb-current {
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.game-details-section {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    flex-wrap: wrap;
+}
+
+.game-details-image {
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.game-details-image > img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.game-details-gallery {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.game-details-gallery img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.2s ease;
+}
+
+.game-details-gallery img:hover {
+    border-color: var(--light-blue-main);
+}
+
+.game-details-info {
+    flex: 2;
+    min-width: 400px;
+}
+
+.game-title {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+}
+
+.game-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.game-specs h3 {
+    font-size: 20px;
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+}
+
+.game-specs ul {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.game-specs ul li {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.spec-label {
+    font-weight: 500;
+    color: var(--text-color);
+    margin-right: 5px;
+}
+
+.purchase-block {
+    background-color: var(--light-gray-bg);
+    border-radius: 8px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.price-display .current-price {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--dark-blue);
+}
+
+.buy-button {
+    background-color: var(--light-blue-main);
+    color: var(--white-text);
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    max-width: 300px;
+}
+
+.buy-button:hover {
+    background-color: #367cce;
+}
+
+.platform-select {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.platform-select label {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.platform-select select {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: var(--white-text);
+    color: var(--text-color);
+    cursor: pointer;
+}
+
+.related-games-section {
+    margin-top: 50px;
+}
+
+.section-title {
+    font-size: 28px;
+    color: var(--dark-blue);
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.game-grid-small {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    justify-content: center;
+}
+
+/* Адаптивність для сторінки купівлі */
+@media (max-width: 992px) {
+    .game-details-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+    .game-details-image,
+    .game-details-info {
+        max-width: 100%;
+        min-width: unset;
+        width: 100%;
+    }
+    .game-details-image > img {
+        max-width: 400px;
+    }
+    .purchase-block,
+    .platform-select {
+        max-width: 100%;
+    }
+    .game-grid-small {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        padding: 15px;
+    }
+    .game-title {
+        font-size: 30px;
+    }
+    .price-display .current-price {
+        font-size: 28px;
+    }
+    .buy-button {
+        font-size: 18px;
+        padding: 12px 25px;
+    }
+    .section-title {
+        font-size: 24px;
+    }
+    .game-grid-small {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        flex-direction: column;
+        padding: 15px 15px;
+    }
+    .header__nav {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .header__nav-item {
+        margin-bottom: 5px;
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+    .header__logo-text {
+        font-size: 18px;
+    }
+    .game-details-gallery img {
+        width: 60px;
+        height: 60px;
+    }
+    .game-description,
+    .game-specs ul li,
+    .platform-select label,
+    .platform-select select {
+        font-size: 14px;
+    }
+    .footer {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 15px;
+    }
+    .footer span {
+        font-size: 14px;
+    }
+}
